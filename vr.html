@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>A-Frame tutorial</title>
+		<!-- INCLUDE A-FRAME LIBRARY -->
+		<script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+	</head>
+	<body>
+		<!-- ALL THE VR CONTENT GOES HERE -->
+		<a-scene>
+			<!-- LOAD ASSETS -->
+			<a-assets>
+				<!-- <img id="texture" src="wood-texture.jpg" /> -->
+				<img
+					id="texture"
+					src="https://ankit-profile-storage.s3.ap-south-1.amazonaws.com/blog/wood-texture.jpg"
+				/>
+			</a-assets>
+			<!-- ======== SHAPES -->
+			<!-- SPEHERE -->
+			<a-sphere
+				color="#C73D6D"
+				radius="0.5"
+				animation="property: position; to: 0 1.5 0; dur: 700; loop: true; easing: easeInSine; dir: alternate"
+				animation__color="property: color; to: #58303E; dur: 700; loop: true; easing: easeInSine; dir: alternate"
+			></a-sphere>
+			<!-- BOX -->
+			<a-box
+				width="1"
+				height="1"
+				depth="0.5"
+				color="#58303E"
+				position="1.1 0 0"
+				animation="property: rotation; to: 180 0 0; dur: 1500; loop: true; easing: linear"
+			></a-box>
+			<!-- TEXTURED BOX -->
+			<a-box
+				width="1"
+				height="0.5"
+				depth="0.5"
+				color="#A28886"
+				src="#texture"
+				position="1.1 1 0"
+				animation="property: rotation; to: 180 0 0; dur: 5000; loop: true; easing: linear"
+			></a-box>
+			<!-- CONE -->
+			<a-cone
+				color="#4B89DD"
+				radius-bottom="0.6"
+				radius-top="0.1"
+				position="-1 0 -0.2"
+			></a-cone>
+			<!-- CYLINDER -->
+			<a-cylinder
+				color="#D34242"
+				height="1"
+				radius="0.2"
+				position="-1.5 0 0.5"
+			></a-cylinder>
+			<!-- PLANE -->
+			<a-plane
+				color="#FFFAF2"
+				height="1.5"
+				width="4"
+				rotation="-90 0 0"
+				position="0 -0.54 0"
+			></a-plane>
+
+			<!-- ========== LIGHTS -->
+			<a-entity light="type: ambient; color: #FFE9A0"></a-entity>
+			<a-entity
+				light="color: #FFB783; intensity: 1"
+				position="-10 1 1"
+			></a-entity>
+
+			<!-- SKY -->
+			<a-sky color="#B5E8FF"></a-sky>
+			<!-- CAMERA -->
+			<a-camera position="0 0 3"></a-camera>
+		</a-scene>
+	</body>
+</html>
